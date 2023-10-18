@@ -1,0 +1,28 @@
+<?php require './templates/header.phtml' ?>
+
+<div>
+    <b>Filtrar por genero:</b>
+    <?php
+    foreach ($data["generos"] as $genero) {
+    ?>
+        <button><a href="juegos?filtro=<?= $genero->id ?>"> <?= $genero->nombre ?> </a></button>
+    <?php
+    }
+    ?>
+</div>
+
+<ul class="list-group list-group-item-info">
+    <?php foreach ($data["juegos"] as $juego) : ?>
+        <li class="list-group-item list-group-item-action list-group-item-info">
+            <div>
+                <b><?= $juego->nombre ?> | <?= $juego->genero ?> | <?= $juego->precio ?> </b>
+                <button><a href="formJuegos/<?= $juego->id ?>">Editar</a></button>
+                <button><a href="juegos/<?= $juego->id ?>">Ver</a></button>
+            </div>
+        </li>
+    <?php endforeach ?>
+</ul>
+
+<p class="mt-3"><small>Mostrando <?= count($data["juegos"]) ?> juegos</small></p>
+
+<?php require './templates/footer.phtml' ?>

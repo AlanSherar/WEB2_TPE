@@ -1,0 +1,15 @@
+<?php require './templates/header.phtml' ?>
+
+<ul class="list-group list-group-item-info">
+    <li class="list-group-item list-group-item-action list-group-item-info">
+        <div>
+            <b><?= $data->id ?></b> | <?=substr($data->nombre,0,25)?>
+            <button><a href="formGeneros/<?=$data->id?>">Editar</a></button>
+            <button><a href="generos">volver</a></button>
+            <button><a href="deleteGenero/<?=$data->id?>">Borrar</a></button>
+        </div>
+    </li>
+</ul>
+
+
+<?php require './templates/footer.phtml' ?>

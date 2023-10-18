@@ -1,0 +1,15 @@
+<?php require 'templates/header.phtml' ?>
+
+<div class="mt-5 w-25 mx-auto">
+    <form method="POST" action='formGeneros<?php if (isset($id)) {echo "/" . $id; } ?>'>
+        <input type="text" name="nombre" placeholder="Genero">
+        <?php if (isset($id)) { ?>
+            <button type="submit" class="btn btn-primary mt-3">Modificar Genero</button>
+        <?php
+        } else { ?>
+            <button type="submit" class="btn btn-primary mt-3">Agregar Genero</button>
+        <?php } ?>
+    </form>
+</div>
+
+<?php require 'templates/footer.phtml' ?>

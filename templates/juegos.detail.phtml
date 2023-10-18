@@ -1,0 +1,22 @@
+<?php require './templates/header.phtml' ?>
+
+<ul class="list-group list-group-item-info">
+    <li class="list-group-item list-group-item-action list-group-item-info">
+        <div>
+            
+            <p> Nombre | <?=$data->nombre?> </p>
+            <p> Genero | <?=$data->genero?></p>
+            <p> Precio | <?=$data->precio?></p>
+            <p> Micro-Transacciones | <?= $data->micro_transacciones ? "Si" : "No" ?></p>
+            <p> Desarrolladora | <?=$data->desarrolladora?></p>
+            <p> Lanzamiento | <?=$data->lanzamiento?></p>
+            
+            <button><a href="formJuegos/<?=$data->id?>">Editar</a></button>
+            <button><a href="juegos">volver</a></button>
+            <button><a href="deleteJuego/<?=$data->id?>">Borrar</a></button>
+        </div>
+        
+    </li>
+</ul>
+
+<?php require './templates/footer.phtml' ?>

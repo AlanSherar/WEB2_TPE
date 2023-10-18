@@ -1,0 +1,19 @@
+<?php require './templates/header.phtml' ?>
+
+<ul class="list-group list-group-item-info">
+<?php foreach($data as $genero): ?>
+    <li class="list-group-item list-group-item-action list-group-item-info">
+        <div>
+            <b> <?=$genero->id?> | <?=$genero->nombre?> </b>
+            <button><a href="formGeneros/<?=$genero->id?>">Editar</a></button>
+            <button><a href="generos/<?=$genero->id?>">Ver</a></button>
+        </div>
+        
+    </li>
+<?php endforeach ?>
+</ul>
+
+<p class="mt-3"><small>Mostrando <?=count($data)?> generos</small></p>
+
+
+<?php require './templates/footer.phtml' ?>

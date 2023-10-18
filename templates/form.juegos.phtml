@@ -1,0 +1,38 @@
+<?php require 'templates/header.phtml' ?>
+
+<div class="mt-5 w-25 mx-auto">
+    <form action='formJuegos<?php if (isset($id)) {echo "/" . $id; } ?>' method="post">
+        <input type="text" name="nombre" placeholder="Ingrese Nombre">
+        <input type="number" name="precio" placeholder="Ingrese Precio">
+        <label for="">Seleccione el genero</label>
+        <select name="genero" id="" >
+
+            <?php
+            if (!isset($data)) { ?>
+                <option value="">No hay generos</option>
+                <?php
+            } else {
+                foreach ($data as $genero) { ?>
+                    <option value="<?= $genero->id ?>"><?= $genero->nombre ?></option>
+            <?php
+                }
+            }
+            ?>
+        </select>
+        <input type="text" name="desarrolladora" placeholder="Ingrese Desarrolladora">
+        <label for="">Tiene Micro-transacciones?</label>
+        <select name="micro_transacciones" id="" placeholder="Ingrese Micro_transacciones">
+            <option value="false">No</option>
+            <option value="true">Si</option>
+        </select>
+        <input type="text" name="lanzamiento" placeholder="Ingrese Lanzamiento">
+        <?php if (isset($id)) { ?>
+            <button type="submit" class="btn btn-primary mt-3">Modificar Genero</button>
+        <?php
+        } else { ?>
+            <button type="submit" class="btn btn-primary mt-3">Agregar Genero</button>
+        <?php } ?>
+    </form>
+</div>
+
+<?php require 'templates/footer.phtml' ?>
